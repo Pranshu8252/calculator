@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/jss/main.js">
+    <title>Document</title>
+</head>
+<body>
+   <div class="calculator">
+    <div class="display">
+      <input type="text" id="result" disabled>
+    </div>
+     
+    <div class="button">
+      <button onclick="clearResult()">AC</button>
+      <button onclick="deleteResult()">DEL</button>
+      <button onclick="insertvalue('%')">%</button>
+      <button onclick="insertvalue('/')">/</button>
+      <button onclick="insertvalue('7')">7</button>
+      <button onclick="insertvalue('8')">8</button>
+      <button onclick="insertvalue('9')">9</button>
+      <button onclick="insertvalue('*')">*</button>
+      <button onclick="insertvalue('4')">4</button>
+      <button onclick="insertvalue('5')">5</button>
+      <button onclick="insertvalue('6')">6</button>
+      <button onclick="insertvalue('-')">-</button>
+      <button onclick="insertvalue('1')">1</button>
+      <button onclick="insertvalue('2')">2</button>
+      <button onclick="insertvalue('3')">3</button>
+      <button onclick="insertvalue('+')">+</button>
+      <button onclick="insertvalue('00')">00</button>
+      <button onclick="insertvalue('0')">0</button>
+      <button onclick="insertvalue('.')">.</button>
+      <button class="eg" onclick="calculate()">=</button>
+    </div>
+   </div>
+   <script>
+   let Result = document.getElementById("result");
+    
+   function insertvalue(value){
+     Result.value += value;
+   }
+
+   function clearResult(){
+     Result.value = '';
+    }
+    function deleteResult(){
+     Result.value = Result.value.slice(0, -1);
+    }
+   
+     function calculate(){
+        try{
+         Result.value = eval(Result.value);
+        }
+        catch(error){
+         Result.value ="error";
+        }
+     }
+    </script>
+
+</body>
+</html>
